@@ -1,51 +1,16 @@
 [
   {
-    "id": "clg0di23c0000zpp4da8pe07a",
-    "title": "test",
-    "content": "test",
-    "published": false,
-    "createdAt": "2023-04-03T05:10:40.921Z"
+    "id": "clg0hav2p000119p418860ka2",
+    "title": "Hello to R3 App ",
+    "content": "This is R3 app ",
+    "published": "published",
+    "createdAt": "2023-04-03T06:57:03.698Z"
   },
   {
-    "id": "clg0eqs5n0000mgp44xw96zpl",
-    "title": "test",
-    "content": "test",
-    "published": false,
-    "createdAt": "2023-04-03T05:45:27.563Z"
-  },
-  {
-    "id": "clg0eqsss0001mgp4d4vnatna",
-    "title": "test",
-    "content": "test",
-    "published": false,
-    "createdAt": "2023-04-03T05:45:28.396Z"
-  },
-  {
-    "id": "clg0eqt9b0002mgp4has76zcq",
-    "title": "test",
-    "content": "test",
-    "published": false,
-    "createdAt": "2023-04-03T05:45:28.991Z"
-  },
-  {
-    "id": "clg0eqtfp0003mgp4c2fg2ncc",
-    "title": "test",
-    "content": "test",
-    "published": false,
-    "createdAt": "2023-04-03T05:45:29.221Z"
-  },
-  {
-    "id": "clg0eqtm70004mgp405q13z3n",
-    "title": "test",
-    "content": "test",
-    "published": false,
-    "createdAt": "2023-04-03T05:45:29.455Z"
-  },
-  {
-    "id": "clg0equ3q0005mgp487mz5s6g",
-    "title": "test",
-    "content": "test",
-    "published": false,
-    "createdAt": "2023-04-03T05:45:30.086Z"
+    "id": "clg0hf0j8000219p4633y69ns",
+    "title": "Test 2 ",
+    "content": "Blogs ",
+    "published": "rejected",
+    "createdAt": "2023-04-03T07:00:17.396Z"
   }
 ]

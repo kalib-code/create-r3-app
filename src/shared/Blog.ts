@@ -17,8 +17,8 @@ export class Blog {
     @Fields.string()
     content = ""
 
-    @Fields.boolean()
-    published = false
+    @Fields.string()
+    published = ""
 
     @Fields.createdAt()
     createdAt = new Date()

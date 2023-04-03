@@ -57,7 +57,7 @@ export const nextDataProvider = (apiUrl: string, httpClient: AxiosInstance = axi
     update: async ({ resource, id, variables, meta }) => {
         const url = `${apiUrl}/${resource}/${id}`;
 
-        const { data } = await httpClient.patch(url, variables);
+        const { data } = await httpClient.put(url, variables);
 
         return {
             data,

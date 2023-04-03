@@ -1,9 +1,36 @@
-import { AntdShowInferencer } from "@refinedev/inferencer/antd";
 import { GetServerSideProps } from "next";
 import { authProvider } from "@shared/authProvider";
+import { Show } from "@refinedev/antd";
+import { useShow } from "@refinedev/core";
+import { Typography } from "antd";
+const { Title, Text } = Typography;
+import { Blog } from "@shared/Blog";
 
 export default function BlogPostShow() {
-  return <AntdShowInferencer />;
+  const { queryResult } = useShow<Blog>()
+  const { data, isLoading } = queryResult
+
+  const record = data?.data;
+
+  return (
+    <Show isLoading={isLoading}>
+      <Title level={5}>Id</Title>
+      <Text>{record?.id}</Text>
+
+      <Title level={5}>Title</Title>
+      <Text>{record?.title}</Text>
+
+      <Title level={5}>Content</Title>
+      <Text>
+        {record?.content}
+      </Text>
+      <Title level={5}>Status</Title>
+      <Text>
+        {record?.published}
+      </Text>
+
+    </Show>
+  );
 }
 
 export const getServerSideProps: GetServerSideProps<{}> = async (context) => {
@@ -13,7 +40,7 @@ export const getServerSideProps: GetServerSideProps<{}> = async (context) => {
     return {
       props: {},
       redirect: {
-        destination: `${redirectTo}?to=${encodeURIComponent("/blog-posts")}`,
+        destination: `${redirectTo}?to=${encodeURIComponent("/blogs")}`,
         permanent: false,
       },
     };
