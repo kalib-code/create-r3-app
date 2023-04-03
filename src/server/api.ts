@@ -1,37 +1,23 @@
-import { createRemultServer } from "remult/server";
-import { Task } from "@shared/Task";
-import { Blog } from "@shared/Blog";
+import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs'
+import type { NextApiRequest, NextApiResponse } from 'next'
 
-export const api = createRemultServer({
-  entities: [Task, Blog],
-});
+import { remultNext } from "remult/remult-next"
+import { entities } from "@shared/entities";
 
-import {
-  GetServerSideProps,
-  GetServerSidePropsContext,
-  GetServerSidePropsResult,
-  PreviewData,
-} from "next";
-import { ParsedUrlQuery } from "querystring";
+export const handlerRemult = async (req: NextApiRequest, res: NextApiResponse) => {
+  const supabaseServerClient = createServerSupabaseClient({
+    req,
+    res,
+  })
+  const {
+    data: { user },
+  } = await supabaseServerClient.auth.getUser()
 
-
-export function withRemult<
-  P extends { [key: string]: any } = { [key: string]: any },
-  Q extends ParsedUrlQuery = ParsedUrlQuery,
-  D extends PreviewData = PreviewData
->(
-  getServerPropsFunction: GetServerSideProps<P, Q, D>
-): GetServerSideProps<P, Q, D> {
-  return (context: GetServerSidePropsContext<Q, D>) => {
-    return new Promise<GetServerSidePropsResult<P>>((res, err) => {
-      api.withRemult(context, undefined!, async () => {
-        try {
-          let r = await getServerPropsFunction(context);
-          res(JSON.parse(JSON.stringify(r)));
-        } catch (e) {
-          err(e);
-        }
-      });
-    });
-  };
+  console.log('user', user)
+  const api = remultNext({
+    getUser: () => user as any,
+    entities
+  });
+  return api.handle(req, res);
 }
+

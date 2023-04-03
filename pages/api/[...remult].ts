@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { api } from '@server/api';
+import { handlerRemult } from '@server/api';
 
-const handler = async (_req: NextApiRequest, res: NextApiResponse) => {
-    await api.handle(_req, res);
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+    await handlerRemult(req, res);
 }
 
 export default handler

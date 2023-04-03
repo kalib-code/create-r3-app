@@ -8,15 +8,12 @@ import routerProvider, {
   UnsavedChangesNotifier,
 } from "@refinedev/nextjs-router";
 
-import dataProvider from "@refinedev/simple-rest";
-import { nextDataProvider } from "@shared/dataProvider/dataProvider";
+import { remultDataProvider } from "@shared/dataProvider/dataProvider";
 import "@refinedev/antd/dist/reset.css";
 import { Header } from "@components/header";
 import { ColorModeContextProvider } from "@contexts";
-// import { authProvider } from "src/authProvider";
 import { authProvider } from "@shared/authProvider";
-
-const LOCAL_API_URL = "http://localhost:3000/api";
+import { entities } from "@shared/entities";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   noLayout?: boolean;
@@ -45,7 +42,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
         <ColorModeContextProvider>
           <Refine
             routerProvider={routerProvider}
-            dataProvider={nextDataProvider(LOCAL_API_URL)}
+            dataProvider={remultDataProvider(entities)}
             notificationProvider={notificationProvider}
             authProvider={authProvider}
             resources={[

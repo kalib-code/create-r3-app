@@ -2,10 +2,10 @@
 
 // src/shared/Task.ts
 
-import { Entity, Fields } from "remult"
+import { Entity, Fields, Allow } from "remult"
 
 @Entity("blogs", {
-    allowApiCrud: true
+    allowApiCrud: Allow.authenticated,
 })
 export class Blog {
     @Fields.cuid()

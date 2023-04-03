@@ -12,7 +12,7 @@ import {
 import { GetServerSideProps } from "next";
 import { authProvider } from "@shared/authProvider";
 
-import { Blog } from "@shared/Blog";
+import { Blog } from "@shared/entities/Blog";
 
 
 export default function BlogList() {

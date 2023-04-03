@@ -2,7 +2,7 @@ import { GetServerSideProps } from "next";
 import { authProvider } from "@shared/authProvider";
 import { Edit, useForm } from "@refinedev/antd";
 import { Form, Input, Select } from "antd";
-import { Blog } from "@shared/Blog";
+import { Blog } from "@shared/entities/Blog";
 
 export default function BlogPostEdit() {
 

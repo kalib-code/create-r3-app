@@ -4,7 +4,7 @@ import { Show } from "@refinedev/antd";
 import { useShow } from "@refinedev/core";
 import { Typography } from "antd";
 const { Title, Text } = Typography;
-import { Blog } from "@shared/Blog";
+import { Blog } from "@shared/entities/Blog";
 
 export default function BlogPostShow() {
   const { queryResult } = useShow<Blog>()
