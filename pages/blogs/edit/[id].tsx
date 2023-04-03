@@ -1,9 +1,9 @@
-import { AntdCreateInferencer } from "@refinedev/inferencer/antd";
+import { AntdEditInferencer } from "@refinedev/inferencer/antd";
 import { GetServerSideProps } from "next";
-import { authProvider } from "src/authProvider";
+import { authProvider } from "@shared/authProvider";
 
-export default function BlogPostCreate() {
-  return <AntdCreateInferencer />;
+export default function BlogPostEdit() {
+  return <AntdEditInferencer />;
 }
 
 export const getServerSideProps: GetServerSideProps<{}> = async (context) => {

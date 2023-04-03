@@ -1,7 +1,7 @@
 import { AuthPage } from "@refinedev/antd";
 
 import { GetServerSideProps } from "next";
-import { authProvider } from "src/authProvider";
+import { authProvider } from "@shared/authProvider";
 
 export default function Login() {
   return (

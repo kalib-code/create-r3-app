@@ -1,9 +1,11 @@
-import { AntdShowInferencer } from "@refinedev/inferencer/antd";
+import { useList } from "@refinedev/core";
+import { AntdListInferencer } from "@refinedev/inferencer/antd";
 import { GetServerSideProps } from "next";
-import { authProvider } from "src/authProvider";
+import { authProvider } from "@shared/authProvider";
 
-export default function BlogPostShow() {
-  return <AntdShowInferencer />;
+export default function BlogPostList() {
+
+  return <AntdListInferencer />;
 }
 
 export const getServerSideProps: GetServerSideProps<{}> = async (context) => {
