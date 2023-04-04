@@ -12,12 +12,21 @@ import { GetServerSideProps } from "next";
 import { authProvider } from "src/providers/authProvider";
 
 import { Blog } from "@shared/entities/Blog";
+import { useEffect } from "react";
 
 
 export default function BlogList() {
   const { tableProps } = useTable<Blog[]>({
-    syncWithLocation: true
+    syncWithLocation: true,
+    onLiveEvent: (event) => {
+      console.log(event);
+    },
   });
+
+  useEffect(() => {
+
+
+  }, [tableProps.dataSource]);
 
   return (
     <List>

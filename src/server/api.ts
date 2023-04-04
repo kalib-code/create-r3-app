@@ -12,8 +12,6 @@ export const handlerRemult = async (req: NextApiRequest, res: NextApiResponse) =
   const {
     data: { user },
   } = await supabaseServerClient.auth.getUser()
-
-  console.log('user', user)
   const api = remultNext({
     getUser: () => user as any,
     entities

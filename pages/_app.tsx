@@ -9,6 +9,7 @@ import routerProvider, {
 } from "@refinedev/nextjs-router";
 
 import { remultDataProvider } from "src/providers/dataProvider/dataProvider";
+import { liveProvider } from "src/providers/liveProvider";
 import "@refinedev/antd/dist/reset.css";
 import { Header } from "@components/header";
 import { ColorModeContextProvider } from "@contexts";
@@ -41,6 +42,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
       <RefineKbarProvider>
         <ColorModeContextProvider>
           <Refine
+            liveProvider={liveProvider(entities)}
             routerProvider={routerProvider}
             dataProvider={remultDataProvider(entities)}
             notificationProvider={notificationProvider}
