@@ -1,8 +1,7 @@
-import { AntdCreateInferencer } from "@refinedev/inferencer/antd";
 import { GetServerSideProps } from "next";
-import { authProvider } from "@shared/authProvider";
+import { authProvider } from "src/providers/authProvider";
 import { Create, useForm } from "@refinedev/antd";
-import { Checkbox, Form, Input, Select } from "antd";
+import { Form, Input, Select } from "antd";
 
 export default function BlogPostCreate() {
   const { formProps, saveButtonProps } = useForm();

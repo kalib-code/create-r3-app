@@ -1,5 +1,5 @@
 import { GetServerSideProps } from "next";
-import { authProvider } from "@shared/authProvider";
+import { authProvider } from "src/providers/authProvider";
 import { Edit, useForm } from "@refinedev/antd";
 import { Form, Input, Select } from "antd";
 import { Blog } from "@shared/entities/Blog";

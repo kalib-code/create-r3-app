@@ -1,6 +1,6 @@
 import { ErrorComponent } from "@refinedev/antd";
 import { GetServerSideProps } from "next";
-import { authProvider } from "@shared/authProvider";
+import { authProvider } from "src/providers/authProvider";
 
 export default function CatchAll() {
   return <ErrorComponent />;

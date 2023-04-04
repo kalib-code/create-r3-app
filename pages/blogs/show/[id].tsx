@@ -1,5 +1,5 @@
 import { GetServerSideProps } from "next";
-import { authProvider } from "@shared/authProvider";
+import { authProvider } from "src/providers/authProvider";
 import { Show } from "@refinedev/antd";
 import { useShow } from "@refinedev/core";
 import { Typography } from "antd";

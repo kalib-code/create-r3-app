@@ -38,7 +38,6 @@ export const remultDataProvider = (
 
             options.where = generateFilter(filters);
 
-            const queryFilters = generateFilter(filters);
             return {
                 data: await repo.find(options) as any,
                 total: await repo.count(options.where),
@@ -67,7 +66,6 @@ export const remultDataProvider = (
         getMany: async ({ resource, ids }) => {
             const data = await repoByKey(resource).find({
                 where: {
-                    //TODO - I don't like it that when there are no ids it returns all, but that's the way the original example worked
                     //@ts-ignore
                     id: ids?.length > 0 ? ids : undefined
                 }

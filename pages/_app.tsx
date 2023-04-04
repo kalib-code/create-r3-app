@@ -8,11 +8,11 @@ import routerProvider, {
   UnsavedChangesNotifier,
 } from "@refinedev/nextjs-router";
 
-import { remultDataProvider } from "@shared/dataProvider/dataProvider";
+import { remultDataProvider } from "src/providers/dataProvider/dataProvider";
 import "@refinedev/antd/dist/reset.css";
 import { Header } from "@components/header";
 import { ColorModeContextProvider } from "@contexts";
-import { authProvider } from "@shared/authProvider";
+import { authProvider } from "src/providers/authProvider";
 import { entities } from "@shared/entities";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {

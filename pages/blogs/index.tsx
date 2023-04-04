@@ -7,10 +7,9 @@ import {
 } from "@refinedev/antd";
 import {
   Table,
-  Tag,
 } from "antd";
 import { GetServerSideProps } from "next";
-import { authProvider } from "@shared/authProvider";
+import { authProvider } from "src/providers/authProvider";
 
 import { Blog } from "@shared/entities/Blog";
 
@@ -46,7 +45,6 @@ export default function BlogList() {
         />
         <Table.Column
           title="Action"
-
           render={(_, record: Blog) => {
             return (
               <>
